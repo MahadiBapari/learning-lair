@@ -1,0 +1,75 @@
+
+.lesson{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 84px 200px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: #cba49757;
+
+}
+
+.lesson h2{
+    font-family: Inika;
+    font-size: 39px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 30px;
+
+}
+
+.lesson span{
+    color: #AB0606;
+}
+
+.info_box{
+    width: 100%;
+    height: 536px;
+    background-image: url(../../images/home3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.inside_info_box{
+    width: 450px;
+    height: 390px;
+    background-color: #FFFBF2;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inside_info_box h3{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 26px;
+    margin-bottom: 33px;
+
+}
+
+.inside_info_box ul{
+    font-family: Inika;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 20px;
+    list-style-type:square;
+    list-style-position: inside;
+
+}
+

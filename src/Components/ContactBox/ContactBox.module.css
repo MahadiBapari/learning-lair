@@ -1,0 +1,67 @@
+.contactBox{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 84px 200px;
+    padding-top: 130px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.contactBox h2{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 51px;
+    color: #000000;
+    line-height: 51px;
+    margin-bottom: 30px;
+
+}
+
+.contactBox span{
+    color: #AB0606;
+}
+
+.map_box{
+    width: 100%;
+    height: 550px;
+    display: grid;
+    grid-column: 1fr;
+    grid-row: 1fr;
+    grid-template-areas: overlay;
+}
+
+.inside_box{
+    width: 400px;
+    height: 400px;
+    background: rgba(203, 164, 151, 0.705);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    grid-area: overlay;
+    justify-self: left;
+    align-self: center;
+   
+}
+.inside_box h3{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 51px;
+    text-align: center;
+    color: #AB0606;
+}
+

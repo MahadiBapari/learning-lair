@@ -1,0 +1,13 @@
+.maps{
+    height: 500px;
+    width: 100%;
+    padding: auto;
+    padding: 84px 200px;
+}
+
+.mapContainer{
+   height: 500px;
+   width: 100%;
+   padding: 84px 200px;
+   position: relative;
+}

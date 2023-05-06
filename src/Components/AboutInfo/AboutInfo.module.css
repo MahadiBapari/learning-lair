@@ -1,0 +1,65 @@
+
+.aboutInfo{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 84px 200px;
+    padding-top: 130px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.aboutInfo p{
+    color:rgba(0, 0, 0, 0.555)
+}
+
+.aboutInfo span{
+    color: #AB0606;
+}
+
+.aboutInfo h2{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 51px;
+}
+
+
+.info_row{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.info_box1{
+    width: 60%;
+    height: 428px;
+}
+
+.info_box1 h3{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+    color: #AB0606;
+}
+
+
+.info_box2{
+    width: 40%;
+    height: 428px;
+}
+
+.info_box2 img{
+    width: 100%;
+    height: 428px;
+    
+}

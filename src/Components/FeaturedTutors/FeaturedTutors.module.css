@@ -1,0 +1,106 @@
+
+.featuredTutors{
+    width: 100%;
+    height: 800px;
+    padding: 84px 200px;
+}
+
+.featuredTutors p{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #18171796;
+}
+
+
+.featuredTutors h2{
+    font-family: Inika;
+    font-size: 39px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 30px;
+
+}
+
+.featuredTutors h3{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    
+}
+
+.featuredTutors span{
+    color: #AB0606;
+}
+
+.tutor_row{
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.tutor_box{
+    width: 250px;
+    height: 356px;
+    text-align: center;
+    background: #F2E5DB;
+
+}
+
+
+.tutor_box img{
+    width: 250px;
+    height: 278px;
+}
+
+
+.tutor_box p{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.register{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60PX;
+    gap: 100px;
+}
+
+.register span{
+    font-size: 36px;
+}
+ .btn{
+    display: inline-block;
+    padding: 4px 16px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #DE432E;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 50px;
+  }
+  .btn:hover{
+    background-color: #972f21;
+    transform: scale(1.1);
+    transition: ease .5s;
+  }
+
+  .btn:active{
+    transform: scale(1);
+    transition: none;
+}

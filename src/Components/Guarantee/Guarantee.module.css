@@ -1,0 +1,71 @@
+.guarantee{
+    width: 100%;
+    height: 600px;
+    background-image: linear-gradient(to bottom, #472607a9, #4b1f17a8),url(../../images/home4.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 84px 200px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: white;
+}
+
+.guarantee p{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffffdc;
+}
+
+.guarantee h2{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 51px;
+}
+.guarantee span{
+    color: #EBEE43;
+}
+
+.info_row{
+    display: flex;
+    flex-direction: row;
+    gap: 130px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info_box{
+    width: 33%;
+    height: 428px;
+    padding: 53px 0;
+}
+
+.info_box h3{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+}
+.info_box p{
+    margin-top: 30px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+}

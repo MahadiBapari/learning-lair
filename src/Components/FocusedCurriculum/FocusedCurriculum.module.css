@@ -1,0 +1,68 @@
+
+.focusedCurriculum{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 200px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.focusedCurriculum p{
+    color:rgba(0, 0, 0, 0.555)
+}
+
+.focusedCurriculum span{
+    color: #AB0606;
+}
+
+.focusedCurriculum h2{
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 51px;
+}
+
+
+.info_row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.info_box1{
+    width: 60%;
+    height: 428px;
+}
+
+
+.info_box2{
+    width: 40%;
+    height: 388px;
+    background: #EBC1AA;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+
+.list ul li:nth-child(1){
+    color: #AB0606;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
