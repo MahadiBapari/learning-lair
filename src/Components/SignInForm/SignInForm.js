@@ -1,8 +1,9 @@
 import styles from './SignInForm.module.css'
 import React, { useState } from 'react';
 import LogoDark from '../../images/logoDark.png'
+import { Link } from 'react-router-dom'
 
-function SignInForm() {
+function SignInForm( props ) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,6 +19,7 @@ function SignInForm() {
         <div className={styles.signIn_box}>
 
                 <img src={LogoDark} alt='Logo' />
+                <h2>{props.name}</h2>
             
             <form onSubmit={handleSubmit}>
                 
@@ -45,7 +47,10 @@ function SignInForm() {
                 </form>
                 
                 <p>Dont have an account?</p>
-                <button className={styles.btn2}>Sign Up</button>
+                <Link to="/signupstudent">
+                  <button className={styles.btn2}>Register Now</button>
+                </Link>
+                
 
 
         </div>

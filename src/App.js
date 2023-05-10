@@ -7,6 +7,10 @@ import Terminal from "./Pages/Terminal";
 import Contact from './Pages/Contact'
 import Error from "./Pages/Error";
 import SignIn from "./Pages/SignIn";
+import SignInStudent from "./Pages/SignInStudent";
+import SignInTutor from "./Pages/SignInTutor";
+import SignUpStudent from "./Pages/SignUpStudent";
+import SignUpTutor from "./Pages/SignUpTutor";
 
 
 function App() {
@@ -20,6 +24,11 @@ function App() {
           <Route path="/terminal" element={<Terminal />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/signinstudent" element={<SignInStudent />} />
+          <Route path="/signintutor" element={<SignInTutor />} />
+          <Route path="/signupstudent" element={<SignUpStudent />} />
+          <Route path="/signuptutor" element={<SignUpTutor />} />
+
           <Route path="*" element={<Error />} />
       </Routes>
       <Footer/>
