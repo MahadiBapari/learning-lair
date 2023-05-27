@@ -28,7 +28,7 @@ function SignUpFormStudent() {
                             <input placeholder='Username' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                         </div>
                         <div>
-                            <input placeholder='Password' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                            <input placeholder='Password' type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
                         
                             <button className={styles.btn} type="submit">Sign up</button>

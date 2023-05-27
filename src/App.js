@@ -11,6 +11,7 @@ import SignInStudent from "./Pages/SignInStudent";
 import SignInTutor from "./Pages/SignInTutor";
 import SignUpStudent from "./Pages/SignUpStudent";
 import SignUpTutor from "./Pages/SignUpTutor";
+import Tuition from "./Pages/Tuition";
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
           <Route path="/signintutor" element={<SignInTutor />} />
           <Route path="/signupstudent" element={<SignUpStudent />} />
           <Route path="/signuptutor" element={<SignUpTutor />} />
-
+          <Route path="/tuition" element={<Tuition />} />
           <Route path="*" element={<Error />} />
       </Routes>
       <Footer/>

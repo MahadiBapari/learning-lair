@@ -1,0 +1,35 @@
+.popup {
+    /* Popup container styles */
+  }
+  
+  .popupContent {
+    /* Popup content styles */
+  }
+  
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .closeButton {
+    /* Close button styles */
+  }

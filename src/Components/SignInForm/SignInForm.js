@@ -41,9 +41,12 @@ function SignInForm( props ) {
                         />
                 </div>  
                     
-                
-                
+                <Link to="/tuition">
                 <button className={styles.btn} type="submit">Sign In</button>
+                </Link>
+                
+                
+                
                 </form>
                 
                 <p>Dont have an account?</p>
