@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LogoDark from '../../images/logoDark.png';
 import styles from './SignInForm.module.css';
 import axios from 'axios';
 
 const SignInForm = (props) => {
-  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,8 +16,11 @@ const SignInForm = (props) => {
     // Perform login API call
     axios.post('/api/login', { email, password })
       .then(response => {
+        // Assuming the login API response includes a token or some authentication indicator
+        // You can save the token or user data in local storage or state, etc.
         
-        history.push('/tuition');
+        // Redirect to the signed-in page (Dashboard)
+        navigate('/tuition');
       })
       .catch(error => {
         // Handle login error
