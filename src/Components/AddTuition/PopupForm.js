@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './PopupForm.module.css'
 
 const PopupForm = ({ onClose, onSubmit }) => {
   
@@ -54,10 +55,10 @@ const PopupForm = ({ onClose, onSubmit }) => {
   };
 
   return (
-    <div className="popup">
-      <div className="popup-content">
+    <div className={styles.popup}>
+      <div className={styles.popupContent}>
         <h2>Create a Post</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.formGroup}>
           <div>
             <label htmlFor="phone">Phone Number:</label>
             <input
