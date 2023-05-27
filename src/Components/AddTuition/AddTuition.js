@@ -23,6 +23,7 @@ const AddTuition = () => {
         // Handle error
         console.error(error);
       });
+    console.log(postData)
   };
 
   return (
@@ -36,13 +37,13 @@ const AddTuition = () => {
 
       {posts.map((post, index) => (
         <div key={index} className="post">
-          <h2>{post.location}</h2>
-          <p>{post.phone}</p>
+          <p>{post.phonenumber}</p>
           <p>{post.institution}</p>
-          <p>{post.type}</p>
-          <p>{post.subject}</p>
+          <p>{post.classtype}</p>
+          <p>{post.subjects}</p>
+          <h2>{post.location}</h2>
           <p>{post.salary}</p>
-          <p>{post.extra}</p>
+          <p>{post.description}</p>
         </div>
       ))}
     </div>

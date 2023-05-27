@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import styles from './PopupForm.module.css'
 
 const PopupForm = ({ onClose, onSubmit }) => {
-  
-  const [phone, setPhone] = useState('');
+
+  const [phonenumber, setPhone] = useState('');
   const [institution, setInstitution] = useState('');
-  const [type, setType] = useState('');
-  const [subject, setSubject] = useState('');
+  const [classtype, setType] = useState('');
+  const [subjects, setSubject] = useState('');
   const [location, setLocation] = useState('');
   const [salary, setSalary] = useState('');
-  const [extra, setExtra] = useState('');
+  const [description, setExtra] = useState('');
 
   const handlePhoneChange = (e) => {
     setPhone(e.target.value);
@@ -33,19 +33,19 @@ const PopupForm = ({ onClose, onSubmit }) => {
     setExtra(e.target.value);
   };
 
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const postData = {
-      phone: phone,
+      phonenumber: phonenumber,
       institution: institution,
-      type: type,
-      subject: subject,
+      classtype: classtype,
+      subjects: subjects,
       location: location,
       salary: salary,
-      extra: extra,
-        
+      description: description,
+
     };
 
     onSubmit(postData);
@@ -64,7 +64,7 @@ const PopupForm = ({ onClose, onSubmit }) => {
             <input
               type="text"
               id="phone"
-              value={phone}
+              value={phonenumber}
               onChange={handlePhoneChange}
             />
           </div>
@@ -78,20 +78,20 @@ const PopupForm = ({ onClose, onSubmit }) => {
             />
           </div>
           <div>
-            <label htmlFor="type">Class/type:</label>
+            <label htmlFor="classtype">Class/type:</label>
             <input
               type="text"
               id="type"
-              value={type}
+              value={classtype}
               onChange={handleTypeChange}
             />
           </div>
           <div>
-            <label htmlFor="subject">Subject:</label>
+            <label htmlFor="subjects">Subject:</label>
             <input
               type="text"
               id="subject"
-              value={subject}
+              value={subjects}
               onChange={handleSubjectChange}
             />
           </div>
@@ -118,11 +118,11 @@ const PopupForm = ({ onClose, onSubmit }) => {
             <input
               type="text"
               id="extra"
-              value={extra}
+              value={description}
               onChange={handleExtraChange}
             />
           </div>
-          
+
           <button type="submit">Submit</button>
         </form>
         <button className="close-button" onClick={onClose}>Close</button>
