@@ -16,10 +16,8 @@ const SignInForm = (props) => {
     // Perform login API call
     axios.post('/api/login', { email, password })
       .then(response => {
-        // Assuming the login API response includes a token or some authentication indicator
-        // You can save the token or user data in local storage or state, etc.
         
-        // Redirect to the signed-in page (Dashboard)
+        // Redirect to the signed-in page
         navigate('/tuition');
       })
       .catch(error => {
