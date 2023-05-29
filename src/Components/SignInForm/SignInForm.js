@@ -14,11 +14,11 @@ const SignInForm = (props) => {
     event.preventDefault();
 
     // Perform login API call
-    axios.post('http://localhost:4000/api/login', { email, password })
+    axios.post('/api/login', { email, password })
       .then(response => {
         // Assuming the login API response includes a token or some authentication indicator
         // You can save the token or user data in local storage or state, etc.
-
+        
         // Redirect to the signed-in page (Dashboard)
         navigate('/tuition');
       })
