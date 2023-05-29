@@ -17,22 +17,22 @@ import Tuition from "./Pages/Tuition";
 function App() {
   return (
     <BrowserRouter>
-      
-      <Navbar/>
+
+      <Navbar />
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/terminal" element={<Terminal />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signinstudent" element={<SignInStudent />} />
-          <Route path="/signintutor" element={<SignInTutor />} />
-          <Route path="/signupstudent" element={<SignUpStudent />} />
-          <Route path="/signuptutor" element={<SignUpTutor />} />
-          <Route path="/tuition" element={<Tuition />} />
-          <Route path="*" element={<Error />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/terminal" element={<Terminal />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signinstudent" element={<SignInStudent />} />
+        <Route path="/signintutor" element={<SignInTutor />} />
+        <Route path="/signupstudent" element={<SignUpStudent />} />
+        <Route path="/signuptutor" element={<SignUpTutor />} />
+        <Route path="/tuition" element={<Tuition />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }
