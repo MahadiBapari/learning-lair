@@ -1,9 +1,12 @@
 import React from 'react'
+import SignUpFormTutor from '../Components/SignUpForm/SignUpFormTutor'
 
 function SignUpTutor() {
   return (
-    <div>SignUpTutor</div>
+    <div>
+      <SignUpFormTutor />
+    </div>
   )
 }
 
-export default SignUpTutor
+export default SignUpTutor;
