@@ -1,32 +1,33 @@
-import React from 'react';
-import styles from './SignUpFormStudent.module.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import LogoDark from '../../images/logoDark.png';
+import styles from './SignUpFormStudent.module.css';
 
 function SignUpFormTutor() {
-    const [name, setUsername] = useState('');
-    const [phonenumber, setUsernumber] = useState('');
+    const [name, setName] = useState('');
+    const [phonenumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [picture, setPicture] = useState('');
+    const [picture, setPicture] = useState(null);
     const [certificates, setCertificates] = useState([]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const formData = {
-            name,
-            phonenumber,
-            email,
-            password,
-            picture,
-            certificates,
-        };
 
-        console.log(formData);
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('phonenumber', phonenumber);
+        formData.append('email', email);
+        formData.append('password', password);
+        formData.append('picture', picture);
 
+        certificates.forEach((certificate, index) => {
+            formData.append(`certificates[${index}]`, certificate);
+        });
+
+        console.log(formData)
         axios
-            .post('http://localhost:4000/api/tutorRegister', formData)
+            .post('http://localhost:4000/api/tutorregister', formData)
             .then((response) => {
                 console.log('Registration successful!', response.data);
             })
@@ -36,69 +37,76 @@ function SignUpFormTutor() {
     };
 
     const handlePictureUpload = (event) => {
-        setPicture(event.target.files[0]);
+        const file = event.target.files[0];
+        setPicture(file);
     };
 
     const handleCertificateUpload = (event) => {
-        const files = Array.from(event.target.files).slice(0, 8); // Limit to a maximum of 8 files
+        const files = Array.from(event.target.files).slice(0, 8);
         setCertificates(files);
     };
 
     return (
         <div className={styles.signUpFormStudent}>
             <div className={styles.signUp_box}>
-                <img src={LogoDark} alt='Logo' />
+                <img src={LogoDark} alt="Logo" />
                 <form onSubmit={handleSubmit}>
                     <div>
                         <input
-                            placeholder='Full Name'
-                            type='text'
+                            placeholder="Full Name"
+                            name='name'
+                            type="text"
                             value={name}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) => setName(e.target.value)}
                         />
                     </div>
                     <div>
                         <input
-                            placeholder='Phone Number'
-                            type='text'
+                            placeholder="Phone Number"
+                            name='phonenumber'
+                            type="text"
                             value={phonenumber}
-                            onChange={(e) => setUsernumber(e.target.value)}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
                         />
                     </div>
                     <div>
                         <input
-                            placeholder='Email'
-                            type='email'
+                            placeholder="Email"
+                            name='email'
+                            type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div>
                         <input
-                            placeholder='Password'
-                            type='text'
+                            placeholder="Password"
+                            type="password"
+                            name='password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                     <div>
                         <input
-                            placeholder='Upload Your Picture'
-                            type='file'
-                            accept='image/*'
+                            placeholder="Upload Your Picture"
+                            type="file"
+                            name='picture'
+                            accept="image/*"
                             onChange={handlePictureUpload}
                         />
                     </div>
                     <div>
                         <input
-                            placeholder='Upload Your Certificates along with NID'
-                            type='file'
-                            accept='image/*'
+                            placeholder="Upload Your Certificates along with NID"
+                            type="file"
+                            name='certificates'
+                            accept="image/*"
                             multiple
                             onChange={handleCertificateUpload}
                         />
                     </div>
-                    <button className={styles.btn} type='submit'>
+                    <button className={styles.btn} type="submit">
                         Sign up
                     </button>
                 </form>

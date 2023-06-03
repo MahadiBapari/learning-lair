@@ -23,7 +23,9 @@ const Hero = () => {
         <div className={styles.hero}>
             <h2>Elevate Your Education with One-on-One Tutoring</h2>
             <div>
-                <button className={styles.btn}>Hire a Tutor</button>
+                <Link to="/signupstudent">
+                    <button className={styles.btn}>Hire a Tutor</button>
+                </Link>
                 <Link to="/signuptutor">
                     <button className={styles.btn}>Become a Tutor</button>
                 </Link>
