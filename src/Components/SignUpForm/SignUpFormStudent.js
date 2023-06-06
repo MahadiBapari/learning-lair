@@ -2,8 +2,24 @@ import React from 'react'
 import styles from './SignUpFormStudent.module.css'
 import { useState } from 'react';
 import LogoDark from '../../images/logoDark.png'
+// import { useAppContext } from '../../Context/appContext';
+
+// const [values, setValues] = useState()
+
+// const initialState = {
+//     username: '',
+//     usernumber: '',
+//     email: '',
+//     password: '',
+//     isMember: true,
+//     showAlert: false,
+// }
 
 function SignUpFormStudent() {
+
+    // const state = useAppContext()
+    // console.log(state);
+
     const [username, setUsername] = useState('');
     const [usernumber, setUsernumber] = useState('');
     const [email, setEmail] = useState('');
