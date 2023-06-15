@@ -4,7 +4,8 @@ import SignInForm from '../Components/SignInForm/SignInForm'
 function SignInStudent() {
 
   const data ={
-    name: "Student/Guardian"
+    name: "Student/Guardian",
+    navLink: "/signupstudent"
   }  
   return (
     <div>

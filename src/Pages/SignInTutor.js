@@ -3,7 +3,8 @@ import SignInForm from '../Components/SignInForm/SignInForm'
 
 function SignInTutor() {
     const data ={
-        name: "Tutor"
+        name: "Tutor",
+        navLink : "/signuptutor" 
       }  
       return (
         <div>
