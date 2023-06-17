@@ -1,0 +1,9 @@
+.tuition_box{
+    width: 450px;
+    height: auto;
+    background-color: #e7d09a;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}

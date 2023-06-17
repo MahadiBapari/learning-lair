@@ -1,9 +1,17 @@
-import React from 'react'
+import {useEffect, useState} from 'react'
 import AddTuition from '../Components/AddTuition/AddTuition'
 
+
+
 function Tuition() {
+
+  
   return (
-    <AddTuition/>
+    
+        <AddTuition/>
+      
+
+    
   )
 }
 

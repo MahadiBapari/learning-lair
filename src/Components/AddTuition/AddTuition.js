@@ -1,9 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect , useState } from 'react';
 import PopupForm from './PopupForm';
 import axios from 'axios';
 import styles from './AddTuition.module.css'
+import TuitionBox from '../TuitionBox/TuitionBox';
 
 const AddTuition = () => {
+
+  const [tuitions, setTuitions] = useState(null)
+
+  useEffect(() => {
+    const fetchTuitions = async () =>{
+      const response = await fetch('/api/tuitions')
+      const json = await response.json()
+
+      if (response.ok){
+        setTuitions(json)
+    } 
+    
+    }
+    fetchTuitions()
+  }, [])
+
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [posts, setPosts] = useState([]);
 
@@ -46,6 +63,13 @@ const AddTuition = () => {
           <p>{post.description}</p>
         </div>
       ))}
+
+      <div>
+        <h2>Tuitions</h2>
+        {tuitions && tuitions.map((tuition) => (
+          <TuitionBox tuition={tuition} key={tuition._id} />
+        ))}
+      </div>
     </div>
   );
 };

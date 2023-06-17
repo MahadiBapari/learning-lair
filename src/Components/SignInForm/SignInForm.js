@@ -55,7 +55,11 @@ const SignInFormTutor = (props) => {
             />
           </div>
           {error && <p>{error}</p>}
-          <button className={styles.btn} type="submit">Sign In</button>
+          {/* <button className={styles.btn} type="submit">Sign In</button> */}
+          <Link to="/tuition">
+          <button className={styles.btn}>Sign In</button>
+          </Link>
+
         </form>
         <p>Don't have an account?</p>
         <Link to={props.navLink} className={styles.btn2}>Register Now</Link>
