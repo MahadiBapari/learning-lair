@@ -1,9 +1,11 @@
 .tuition_box{
-    width: 450px;
+    width: 80%;
     height: auto;
-    background-color: #e7d09a;
+    background-color: #d3bf918c;
     padding: 30px;
     margin: 30px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.329);
+    border-radius: 8px
 }

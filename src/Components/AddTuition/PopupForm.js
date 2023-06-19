@@ -10,6 +10,8 @@ const PopupForm = ({ onClose, onSubmit }) => {
   const [location, setLocation] = useState('');
   const [salary, setSalary] = useState('');
   const [description, setExtra] = useState('');
+  const [error, setError] = useState(null);
+
 
   const handlePhoneChange = (e) => {
     setPhone(e.target.value);
@@ -34,25 +36,28 @@ const PopupForm = ({ onClose, onSubmit }) => {
   };
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
-    const postData = {
-      phonenumber: phonenumber,
-      institution: institution,
-      classtype: classtype,
-      subjects: subjects,
-      location: location,
-      salary: salary,
-      description: description,
+    const postTuition = {
+
+      phonenumber,
+      institution,
+      classtype,
+      subjects,
+      location,
+      salary,
+      description
 
     };
 
-    onSubmit(postData);
+    onSubmit(postTuition);
 
     // Close the form after submission
     onClose();
   };
+
+
 
   return (
     <div className={styles.popup}>
@@ -125,7 +130,7 @@ const PopupForm = ({ onClose, onSubmit }) => {
 
           <button type="submit">Submit</button>
         </form>
-        <button className="close-button" onClick={onClose}>Close</button>
+        <button className={styles.close_button} onClick={onClose}>Close</button>
       </div>
     </div>
   );

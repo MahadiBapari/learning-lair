@@ -4,7 +4,7 @@ const TuitionBox = ({ tuition }) => {
 
     return (
       <div className = {styles.tuition_box}>
-        <h4>{tuition.classtype}</h4>
+        <h3>{tuition.classtype}</h3>
         <p><strong>Institution: </strong>{tuition.institution}</p>
         <p><strong>Subject: </strong>{tuition.subjects}</p>
         <p><strong>Location: </strong>{tuition.location}</p>

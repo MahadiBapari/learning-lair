@@ -30,6 +30,10 @@
     cursor: pointer;
   }
   
-  .closeButton {
-    /* Close button styles */
+  .close_button {
+    background-color: #9e2f0e;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
   }
