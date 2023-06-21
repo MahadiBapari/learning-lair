@@ -11,3 +11,14 @@
     font-size: 18px;
     line-height: 30px;
 }
+
+button{
+    width: 150px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+

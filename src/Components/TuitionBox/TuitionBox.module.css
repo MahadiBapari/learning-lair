@@ -9,3 +9,7 @@
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.329);
     border-radius: 8px
 }
+
+.d_button {
+    background-color: rgb(126, 2, 2);
+}

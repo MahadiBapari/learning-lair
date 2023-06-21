@@ -10,7 +10,7 @@ const PopupForm = ({ onClose, onSubmit }) => {
   const [location, setLocation] = useState('');
   const [salary, setSalary] = useState('');
   const [description, setExtra] = useState('');
-  const [error, setError] = useState(null);
+  
 
 
   const handlePhoneChange = (e) => {

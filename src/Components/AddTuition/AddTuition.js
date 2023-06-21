@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PopupForm from './PopupForm';
 import styles from './AddTuition.module.css';
-import TuitionBox from '../TuitionBox/TuitionBox';
+import TuitionBoxbyID from '../TuitionBox/TuitionBoxbyID';
+import { useTuitionsContext } from '../../Hooks/useTuitionsContext';
 
 const AddTuition = () => {
-  const [tuitions, setTuitions] = useState(null);
+  const { tuitions, dispatch } = useTuitionsContext();
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
@@ -13,12 +14,12 @@ const AddTuition = () => {
       const json = await response.json();
 
       if (response.ok) {
-        setTuitions(json);
+        dispatch({ type: 'SET_TUITIONS', payload: json });
       }
     };
 
     fetchTuitions();
-  }, []);
+  }, [dispatch]);
 
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
@@ -34,7 +35,7 @@ const AddTuition = () => {
     const json = await response.json();
 
     if (response.ok) {
-      setTuitions([...tuitions, json]);
+      dispatch({ type: 'CREATE_TUITIONS', payload: json });
       toggleFormVisibility();
     } else {
       console.error(json.error);
@@ -45,15 +46,15 @@ const AddTuition = () => {
     <div className={styles.addTuition}>
       <h1>Welcome</h1>
       <p>You can add tuition here</p>
-      <button onClick={toggleFormVisibility}>Add Tuition</button>
+      <button onClick={toggleFormVisibility} className={styles.add_button}>Add Tuition</button>
 
-      {isFormVisible && <PopupForm onClose={toggleFormVisibility} onSubmit={handleFormSubmit}/>}
+      {isFormVisible && <PopupForm onClose={toggleFormVisibility} onSubmit={handleFormSubmit} />}
 
       <div>
         <h2>Tuitions</h2>
         {tuitions &&
           tuitions.map((tuition) => (
-            <TuitionBox tuition={tuition} key={tuition._id} />
+            <TuitionBoxbyID tuition={tuition} key={tuition._id} />
           ))}
       </div>
     </div>
