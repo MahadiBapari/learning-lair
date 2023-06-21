@@ -1,0 +1,13 @@
+.tuition_dashboard{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 84px 200px;
+    padding-top: 130px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
+import TuitionDashboard from '../Components/AllTuitionDashboard/TuitionDashboard'
 
 const Terminal = () => {
   return (
-    <div>Terminal</div>
+    <TuitionDashboard/>
   )
 }
 
