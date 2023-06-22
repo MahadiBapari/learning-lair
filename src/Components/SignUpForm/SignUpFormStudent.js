@@ -2,33 +2,22 @@ import React from 'react'
 import styles from './SignUpFormStudent.module.css'
 import { useState } from 'react';
 import LogoDark from '../../images/logoDark.png'
-// import { useAppContext } from '../../Context/appContext';
-
-// const [values, setValues] = useState()
-
-// const initialState = {
-//     username: '',
-//     usernumber: '',
-//     email: '',
-//     password: '',
-//     isMember: true,
-//     showAlert: false,
-// }
+import { useSignup } from '../../Hooks/useSignup';
 
 function SignUpFormStudent() {
 
-    // const state = useAppContext()
-    // console.log(state);
 
     const [username, setUsername] = useState('');
     const [usernumber, setUsernumber] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const {signup, isLoading, error} = useSignup();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = async(e) => {
+        e.preventDefault();
         console.log('Submitted!', { username, usernumber, email, password });
 
+        await signup(username, usernumber, email, password)
     };
 
     return (
@@ -52,6 +41,7 @@ function SignUpFormStudent() {
                     </div>
 
                     <button className={styles.btn} type="submit">Sign up</button>
+                    {error && <div classname="error">{error}</div>}
                 </form>
 
 

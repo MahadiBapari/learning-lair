@@ -2,6 +2,7 @@
 import styles from './Navbar.module.css';
 import Logo from '../images/LOGO.png';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useLogout } from '../Hooks/useLogout';
 
 const Navbar = () => {
       
@@ -10,6 +11,11 @@ const Navbar = () => {
 
     const isActive = (path) => {
     return location.pathname === path;
+  }
+
+  const {logout} = useLogout()
+  const handleClick = () => {
+    logout()
   }
 
     return ( 
@@ -42,7 +48,9 @@ const Navbar = () => {
           <li className={isActive('/contact') ? styles.active : ''}>
             <NavLink to="/contact">Contact</NavLink>
           </li>
-          
+          <div>
+            <button onClick={handleClick} className={styles.btn}>Log out</button>
+          </div>
           <div>
           <NavLink to="/signin">
           <button className={styles.btn}>Sign In</button>

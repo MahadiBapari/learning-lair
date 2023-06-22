@@ -10,8 +10,8 @@ const SignInFormTutor = (props) => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preDefault();
 
     // Perform login API call
     axios.post('http://localhost:4000/api/login', { email, password })
@@ -43,7 +43,7 @@ const SignInFormTutor = (props) => {
               placeholder='Email'
               type="email"
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>
@@ -51,7 +51,7 @@ const SignInFormTutor = (props) => {
               placeholder='Password'
               type="password"
               value={password}
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           {error && <p>{error}</p>}
