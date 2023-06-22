@@ -2,34 +2,19 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LogoDark from '../../images/logoDark.png';
 import styles from './SignInForm.module.css';
-import axios from 'axios';
+import { useLogin } from '../../Hooks/useLogin';
 
-const SignInFormTutor = (props) => {
+const SignInForm = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  //const [error, setError] = useState('');
   const navigate = useNavigate();
+  const {login, error, isLoading} = useLogin()
 
-  const handleSubmit = (e) => {
-    e.preDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    // Perform login API call
-    axios.post('http://localhost:4000/api/login', { email, password })
-      .then(response => {
-        // Assuming the login API response includes a token or some authentication indicator
-        const token = response.data.token;
-
-        // Save the token in local storage
-        localStorage.setItem('token', token);
-
-        // Redirect to the signed-in page (Dashboard)
-        navigate('/tuition');
-      })
-      .catch(error => {
-        // Handle login error
-        setError('Invalid email or password');
-        console.error(error);
-      });
+    await login(email, password)
   };
 
   return (
@@ -55,9 +40,9 @@ const SignInFormTutor = (props) => {
             />
           </div>
           {error && <p>{error}</p>}
-          {/* <button className={styles.btn} type="submit">Sign In</button> */}
+          <button className={styles.btn} type="submit">Sign In</button>
           <Link to="/tuition">
-          <button className={styles.btn}>Sign In</button>
+          {/* <button className={styles.btn}>Sign In</button> */}
           </Link>
 
         </form>
@@ -68,4 +53,4 @@ const SignInFormTutor = (props) => {
   );
 };
 
-export default SignInFormTutor;
+export default SignInForm;

@@ -1,13 +1,23 @@
 import styles from './TuitionBox.module.css'
 import { useTuitionsContext } from '../../Hooks/useTuitionsContext'
+import { useAuthContext } from '../../Hooks/useAuthContext'
 
 const TuitionBoxbyID = ({ tuition }) => {
 
     const {dispatch} = useTuitionsContext()
+    const { user } = useAuthContext()
 
     const handleClick = async () => {
+
+      if (!user) {
+        return
+      }
+
         const response = await fetch('/api/tuitions/' + tuition._id, {
-          method: 'DELETE'
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${user.token}`
+          }
         });
       
         const json = await response.json() 
@@ -25,8 +35,6 @@ const TuitionBoxbyID = ({ tuition }) => {
         <p><strong>Location: </strong>{tuition.location}</p>
         <p><strong>Salary: </strong>{tuition.salary}</p>
         <p><strong>Description: </strong>{tuition.description}</p>
-        <p><strong>Tuition ID: </strong>{tuition._id}</p>
-        <p>{tuition.createdAt}</p>
         <button onClick={handleClick} className={styles.d_button}>Delete</button>
 
       </div>

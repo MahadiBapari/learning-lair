@@ -3,14 +3,19 @@ import PopupForm from './PopupForm';
 import styles from './AddTuition.module.css';
 import TuitionBoxbyID from '../TuitionBox/TuitionBoxbyID';
 import { useTuitionsContext } from '../../Hooks/useTuitionsContext';
+import { useAuthContext } from '../../Hooks/useAuthContext';
 
 const AddTuition = () => {
   const { tuitions, dispatch } = useTuitionsContext();
+  const user = useAuthContext();
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   useEffect(() => {
     const fetchTuitions = async () => {
-      const response = await fetch('/api/tuitions');
+      const response = await fetch('/api/tuitions', {
+        headers: {'Authorization': `Bearer ${user.token}`},
+
+      })
       const json = await response.json();
 
       if (response.ok) {
@@ -18,28 +23,41 @@ const AddTuition = () => {
       }
     };
 
-    fetchTuitions();
-  }, [dispatch]);
+    if(user){
+      fetchTuitions()
+    }
+  }, [dispatch, user]);
 
   const toggleFormVisibility = () => {
     setIsFormVisible(!isFormVisible);
   };
 
   const handleFormSubmit = async (tuitionData) => {
-    const response = await fetch('/api/tuitions', {
-      method: 'POST',
-      body: JSON.stringify(tuitionData),
-      headers: { 'Content-Type': 'application/json' },
-    });
 
-    const json = await response.json();
-
-    if (response.ok) {
-      dispatch({ type: 'CREATE_TUITIONS', payload: json });
-      toggleFormVisibility();
-    } else {
-      console.error(json.error);
+    if (!user) {
+      console.log('You must be logged in')
+      return
     }
+    if (user){
+      const response = await fetch('/api/tuitions', {
+        method: 'POST',
+        body: JSON.stringify(tuitionData),
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${user.token}`
+       },
+      });
+  
+      const json = await response.json();
+  
+      if (response.ok) {
+        dispatch({ type: 'CREATE_TUITIONS', payload: json });
+        toggleFormVisibility();
+      } else {
+        console.error(json.error);
+      }
+    }
+    
   };
 
   return (
